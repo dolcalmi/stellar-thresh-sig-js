@@ -89,7 +89,7 @@ const signature = await keypair.sign(data);
 ```
 Full example in [./examples/keypair.js](examples/keypair.js)
 ```bash
-$ node ./examples/send-payment.js
+$ node ./examples/keypair.js
 ```
 
 
