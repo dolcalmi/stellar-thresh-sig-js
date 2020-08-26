@@ -108,7 +108,7 @@ const transaction = new TransactionBuilder(sender, {
   .setTimeout(30)
   .build();
 
-  // the only difference is that sign method return a promise.
+  // the only difference is that sign is an async function.
   await transaction.sign(senderKeypair);
 ```
 Full example in [./examples/send-payment.js](examples/send-payment.js)
