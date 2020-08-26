@@ -30,6 +30,13 @@ $ rustc --version
 ```bash
 $ npm i stellar-thresh-sig-js
 ```
+Alternatively, clone it:
+```bash
+$ git clone https://github.com/dolcalmi/stellar-thresh-sig-js
+$ cd stellar-thresh-sig-js
+$ npm install
+```
+if you have problems getting a keypair please check [this issue](https://github.com/KZen-networks/thresh-sig-js/issues/18).
 
 ## Usage
 
