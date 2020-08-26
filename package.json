@@ -28,10 +28,11 @@
     "@kzen-networks/thresh-sig": "^0.4.2",
     "elliptic": "^6.5.3",
     "esm": "^3.2.25",
-    "stellar-base": "^3.0.4"
+    "stellar-sdk": "^5.0.4"
   },
   "devDependencies": {
     "eslint": "^7.7.0",
-    "mocha": "^8.1.2"
+    "mocha": "^8.1.2",
+    "node-fetch": "^2.6.0"
   }
 }
