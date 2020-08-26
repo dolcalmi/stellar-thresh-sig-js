@@ -6,7 +6,7 @@ const { createTestnetAccount } = require('./utils');
 const server = new StellarSdk.Server("https://horizon-testnet.stellar.org");
 
 async function sendPayment() {
-  const senderKeypair = await Keypair.randomTwoPartyThreshSig();
+  const senderKeypair = await Keypair.randomLocalPartyThreshSig();
   const destination = "GAIH3ULLFQ4DGSECF2AR555KZ4KNDGEKN4AFI4SU2M7B43MGK3QJZNSR";
   const amount = "9998";
 

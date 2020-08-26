@@ -66,9 +66,9 @@ $ node ./examples/thresh-sig-server.js
 Create a new random key pair with two-party threshold signature:
 
 ``` js
-const keypair = await Keypair.randomTwoPartyThreshSig();
+const keypair = await Keypair.randomLocalPartyThreshSig();
 // or
-const keypair = await Keypair.randomTwoPartyThreshSig('http://your-server.com:8000');
+const keypair = await Keypair.randomLocalPartyThreshSig('http://your-server.com:8000');
 ```
 
 Export key pair:
