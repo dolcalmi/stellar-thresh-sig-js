@@ -73,13 +73,13 @@ const keypair = await Keypair.randomTwoPartyThreshSig('http://your-server.com:80
 
 Export key pair:
 ``` js
-const keypairJSON = keypair.toJSON()
-await saveToFileOrDB(keypairJSON)
+const keypairJSON = keypair.toJSON();
+await saveToFileOrDB(keypairJSON);
 ```
 
 Restore from json:
 ``` js
-const keypairJSON = await loadFromFileOrDB()
+const keypairJSON = await loadFromFileOrDB();
 const keypair = Keypair.fromJSON(keypairJSON);
 ```
 
