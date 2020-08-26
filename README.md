@@ -1,2 +1,2 @@
 # stellar-thresh-sig-js
-Stellar Javascript threshold signatures SDK
+Stellar Javascript two party threshold signature SDK

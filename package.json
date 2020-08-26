@@ -1,0 +1,37 @@
+{
+  "name": "stellar-thresh-sig",
+  "version": "0.1.0",
+  "description": "Stellar Javascript two party threshold signature SDK",
+  "main": "./lib/index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "npm run lint && npm run mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dolcalmi/stellar-thresh-sig-js.git"
+  },
+  "keywords": [
+    "stellar",
+    "threshold",
+    "threshold-signature",
+    "threshold-eddsa"
+  ],
+  "author": "Juan P Lopez",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/dolcalmi/stellar-thresh-sig-js/issues"
+  },
+  "homepage": "https://github.com/dolcalmi/stellar-thresh-sig-js#readme",
+  "dependencies": {
+    "@kzen-networks/thresh-sig": "^0.4.2",
+    "elliptic": "^6.5.3",
+    "esm": "^3.2.25",
+    "stellar-base": "^3.0.4"
+  },
+  "devDependencies": {
+    "eslint": "^7.7.0",
+    "mocha": "^8.1.2"
+  }
+}
