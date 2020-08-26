@@ -10,12 +10,12 @@ const { Keypair } = require('../');
   await signAndVerify(keypair);
 
   // Threshold signing/verification
-  // keypair = await Keypair.randomThreshold('http://your-server.com:8000');
-  keypair = await Keypair.randomThreshold();
+  // keypair = await Keypair.randomTwoPartyThreshSig('http://your-server.com:8000');
+  keypair = await Keypair.randomTwoPartyThreshSig();
   await signAndVerify(keypair);
 
   // Threshold signing/verification from json
-  keypair = await Keypair.fromJSON(keypair.toJSON());
+  keypair = Keypair.fromJSON(keypair.toJSON());
   await signAndVerify(keypair);
 })();
 
