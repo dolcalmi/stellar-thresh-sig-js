@@ -12,10 +12,27 @@ var utils = module.exports = {
       return;
     server = exec(`ROCKET_PORT=${port} ROCKET_LOG=debug npm run start-p1-server`);
     isServerStarted = true;
+    server.stdin.on('data', (data) => {
+      console.log(`stdin: ${data}`);
+    });
+    server.stdout.on('data', (data) => {
+      console.log(`stdout: ${data}`);
+    });
+    server.stderr.on('data', (data) => {
+      console.log(`stderr: ${data}`);
+    });
+
+    server.on('close', (code) => {
+      console.log(`child process close all stdio with code ${code}`);
+    });
+
+    server.on('exit', (code) => {
+      console.log(`child process exited with code ${code}`);
+    });
     function sleep(ms) {
       return new Promise(resolve => setTimeout(resolve, ms));
     }
-    await sleep(1000); // wait for server to launch
+    await sleep(5000); // wait for server to launch
   },
 
   stopServer: async () => {
