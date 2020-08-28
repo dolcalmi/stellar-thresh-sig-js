@@ -38,4 +38,5 @@ deploy:
 
 script:
   - npm run clean
+  - ROCKET_PORT=8001 ROCKET_LOG=debug npm run start-p1-server
   - npm test
