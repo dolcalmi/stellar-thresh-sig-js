@@ -7,7 +7,7 @@
     "start-p1-server": "node ./examples/thresh-sig-server.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "clean": "rm -rf ./.nyc_output ./node_modules/.cache ./coverage",
+    "clean": "rm -rf ./.nyc_output ./node_modules/.cache ./coverage ./db",
     "report": "nyc -r text -r lcov report",
     "coveralls": "cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "mocha": "nyc mocha --bail --recursive --require ./test/mocha.js",

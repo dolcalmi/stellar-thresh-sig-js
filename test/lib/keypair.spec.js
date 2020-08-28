@@ -37,4 +37,17 @@ describe('StellarThreshSig - Keypair', () => {
     expect(keypair.canSign()).to.be.false;
   })
 
+  it('Should allow sign a transaction', async () => {
+    const transactionBuilder = testUtils.getTransactionBuilderInstance();
+    const keypair = await StellarThreshSig.Keypair.randomLocalPartyThreshSig();
+    // const keypairJSON = testUtils.getKeyPairJSON();
+    // const keypair = StellarThreshSig.Keypair.fromJSON(keypairJSON)
+    const tx = transactionBuilder.build();
+
+    await tx.sign(keypair);
+
+    expect(tx.signatures.length).to.equal(1);
+    expect(keypair.verify(tx.hash(), tx.signatures[0].signature())).to.be.true;
+  })
+
 })

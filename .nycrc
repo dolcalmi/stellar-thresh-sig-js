@@ -5,6 +5,9 @@
   "include": [
     "lib/**/*.js"
   ],
+  "exclude": [
+    "examples/**/*.js"
+  ],
   "require": [
     "esm"
   ],
