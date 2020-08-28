@@ -10,7 +10,7 @@ var utils = module.exports = {
   startServer: async () => {
     if (isServerStarted)
       return;
-    server = exec('npm run start-p1-server');
+    server = exec('ROCKET_PORT=8001 ROCKET_LOG=debug npm run start-p1-server');
     isServerStarted = true;
     function sleep(ms) {
       return new Promise(resolve => setTimeout(resolve, ms));

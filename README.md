@@ -56,10 +56,17 @@ Before use threshold signatures with this library you must initialize [server (p
 import { ThresholdSigServer } from 'stellar-thresh-sig-js';
 new ThresholdSigServer().start();
 ```
-or
+from examples:
 ```bash
 $ node ./examples/thresh-sig-server.js
 ```
+with specific port and log mode:
+```bash
+# log options (off, debug, normal, critical)
+$ ROCKET_PORT=8001 ROCKET_LOG=normal node ./examples/thresh-sig-server.js
+```
+
+If you want to more information about ENV variables go to [Rocket ENV variables](https://rocket.rs/v0.4/guide/configuration/#environment-variables)
 
 ### Keypair
 
