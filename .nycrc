@@ -1,0 +1,13 @@
+{
+  "reporter": [
+    "text"
+  ],
+  "include": [
+    "lib/**/*.js"
+  ],
+  "require": [
+    "esm"
+  ],
+  "check-coverage": true,
+  "cache": true
+}

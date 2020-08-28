@@ -6,7 +6,17 @@
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "test": "npm run lint && npm run mocha"
+    "clean": "rm -rf ./.nyc_output ./node_modules/.cache ./coverage",
+    "report": "nyc -r text -r lcov report",
+    "coveralls": "cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "mocha": "nyc mocha --bail --recursive --require ./test/mocha.js --require esm",
+    "test": "npm run lint && npm run mocha",
+    "preversion": "npm run test",
+    "postversion": "git push && git push --tags"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
   },
   "repository": {
     "type": "git",
@@ -31,8 +41,12 @@
     "stellar-sdk": "^5.0.4"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "coveralls": "^3.1.0",
     "eslint": "^7.7.0",
     "mocha": "^8.1.2",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.0",
+    "nyc": "^15.1.0"
   }
 }
