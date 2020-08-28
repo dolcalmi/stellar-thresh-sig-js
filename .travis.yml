@@ -2,6 +2,9 @@ language: node_js
 node_js:
   - 10
 
+os:
+  - osx
+
 before_install:
   - curl -sSf https://build.travis-ci.org/files/rustup-init.sh | sh -s -- --default-toolchain=1.38.0 --profile=minimal -y
   - export PATH=${TRAVIS_HOME}/.cargo/bin:$PATH
@@ -32,3 +35,7 @@ deploy:
       tags: true
       repo: dolcalmi/stellar-thresh-sig-js
       node: 10
+
+script:
+  - npm run clean
+  - npm test
