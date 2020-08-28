@@ -1,10 +1,10 @@
 # Stellar Two-Party Threshold Signature Library
-[![Version](https://img.shields.io/npm/v/stellar-thresh-sig-js.svg)](https://www.npmjs.org/package/stellar-thresh-sig-js)
+[![Version](https://img.shields.io/npm/v/stellar-thresh-sig.svg)](https://www.npmjs.org/package/stellar-thresh-sig)
 [![Build Status](https://api.travis-ci.org/dolcalmi/stellar-thresh-sig-js.svg?branch=master)](https://travis-ci.org/dolcalmi/stellar-thresh-sig-js)
 [![Coverage Status](https://coveralls.io/repos/github/dolcalmi/stellar-thresh-sig-js/badge.svg?branch=master)](https://coveralls.io/github/dolcalmi/stellar-thresh-sig-js?branch=master)
 [![David](https://img.shields.io/david/dolcalmi/stellar-thresh-sig-js.svg)](https://david-dm.org/dolcalmi/stellar-thresh-sig-js)
 [![David](https://img.shields.io/david/dev/dolcalmi/stellar-thresh-sig-js.svg)](https://david-dm.org/dolcalmi/stellar-thresh-sig-js?type=dev)
-[![Try on RunKit](https://badge.runkitcdn.com/stellar-thresh-sig-js.svg)](https://runkit.com/npm/stellar-thresh-sig-js)
+[![Try on RunKit](https://badge.runkitcdn.com/stellar-thresh-sig-js.svg)](https://runkit.com/npm/stellar-thresh-sig)
 
 Stellar Javascript two party threshold signature SDK
 
