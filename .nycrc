@@ -11,6 +11,6 @@
   "require": [
     "esm"
   ],
-  "check-coverage": true,
-  "cache": true
+  "check-coverage": false,
+  "cache": false
 }
