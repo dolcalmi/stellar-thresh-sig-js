@@ -18,6 +18,7 @@ coverage
 .github
 karma.conf.js
 webpack*
+.nycrc
 
 #build tools
 .travis.yml
@@ -28,6 +29,7 @@ webpack*
 .jscsrc
 .jshintrc
 .eslintrc*
+.eslintignore
 
 #editor settings
 .idea
