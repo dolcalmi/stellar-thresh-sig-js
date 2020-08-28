@@ -40,8 +40,6 @@ describe('StellarThreshSig - Keypair', () => {
   it('Should allow sign a transaction', async () => {
     const transactionBuilder = testUtils.getTransactionBuilderInstance();
     const keypair = await StellarThreshSig.Keypair.randomLocalPartyThreshSig();
-    // const keypairJSON = testUtils.getKeyPairJSON();
-    // const keypair = StellarThreshSig.Keypair.fromJSON(keypairJSON)
     const tx = transactionBuilder.build();
 
     await tx.sign(keypair);
