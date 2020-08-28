@@ -36,7 +36,3 @@ deploy:
       tags: true
       repo: dolcalmi/stellar-thresh-sig-js
       node: 10
-
-script:
-  - npm run build
-  - npm test
