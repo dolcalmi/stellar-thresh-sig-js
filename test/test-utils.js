@@ -1,8 +1,27 @@
 'use strict';
 
 const StellarSdk = require('stellar-sdk');
+const {exec} = require('child_process');
 
+let server;
+let isServerStarted = false;
 var utils = module.exports = {
+
+  startServer: async () => {
+    if (isServerStarted)
+      return;
+    server = exec('npm run start-p1-server');
+    isServerStarted = true;
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    await sleep(1000); // wait for server to launch
+  },
+
+  stopServer: async () => {
+    server.kill();
+    isServerStarted = false;
+  },
 
   getKeyPairJSON: () => {
     return keyPairJSON;
