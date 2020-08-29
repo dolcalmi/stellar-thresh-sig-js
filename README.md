@@ -36,7 +36,11 @@ $ git clone https://github.com/dolcalmi/stellar-thresh-sig-js
 $ cd stellar-thresh-sig-js
 $ npm install
 ```
-if you have problems getting a keypair please check [this issue](https://github.com/KZen-networks/thresh-sig-js/issues/18).
+if you have problems getting a keypair please check [this issue](https://github.com/KZen-networks/thresh-sig-js/issues/18) or run the next command after npm install:
+```bash
+$ OPENSSL_STATIC=yes OPENSSL_LIB_DIR=<openssl path> npm explore @kzen-networks/thresh-sig -- npm run build-rust
+# you can get openssl path with: openssl version -d
+```
 
 ## Usage
 
