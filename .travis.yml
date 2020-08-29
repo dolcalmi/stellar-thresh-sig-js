@@ -38,5 +38,5 @@ deploy:
 
 script:
   - npm run clean
-  - npm explore @kzen-networks/thresh-sig -- npm run build
+  - npm explore @kzen-networks/thresh-sig -- npm run build-rust
   - npm test
