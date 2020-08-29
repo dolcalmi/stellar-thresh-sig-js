@@ -1,11 +1,12 @@
 describe('StellarThreshSig - Keypair', () => {
+  let server;
 
   before(async () => {
-    await testUtils.startServer();
+    server = await testUtils.startServer();
   });
 
   after(() => {
-    testUtils.stopServer()
+    server.kill();
   });
 
   it('Should allow create a random threshold keypair', async () => {
@@ -37,9 +38,40 @@ describe('StellarThreshSig - Keypair', () => {
     expect(keypair.canSign()).to.be.false;
   })
 
-  it('Should allow sign a transaction', async () => {
+  it('Should allow restore json from secret', () => {
+    const keypairJSON = StellarThreshSig.Keypair.random().toJSON();
+    const keypair = StellarThreshSig.Keypair.fromJSON(keypairJSON)
+    expect(keypair).to.be.an.instanceof(StellarThreshSig.Keypair);
+    expect(keypair.canThresholdSign()).to.be.false;
+    expect(keypair.canSign()).to.be.true;
+  })
+
+  it('Should allow restore json from public', () => {
+    const keypairJSON = StellarThreshSig.Keypair.fromPublicKey('GDUHBYEFUFFS2LW7LWVSDSB3PJ2ECDGGRSQMMMFHVOSCF5CM5SVO7VON').toJSON();
+    const keypair = StellarThreshSig.Keypair.fromJSON(keypairJSON)
+    expect(keypair).to.be.an.instanceof(StellarThreshSig.Keypair);
+    expect(keypair.canThresholdSign()).to.be.false;
+    expect(keypair.canSign()).to.be.false;
+  })
+
+  it('Should fail with invalid json', () => {
+    expect(() => StellarThreshSig.Keypair.fromJSON({})).to.throw('Invalid JSON object');
+  })
+
+  it('Should allow sign a transaction with a threshold keypair', async () => {
     const transactionBuilder = testUtils.getTransactionBuilderInstance();
     const keypair = await StellarThreshSig.Keypair.randomLocalPartyThreshSig();
+    const tx = transactionBuilder.build();
+
+    await tx.sign(keypair);
+
+    expect(tx.signatures.length).to.equal(1);
+    expect(keypair.verify(tx.hash(), tx.signatures[0].signature())).to.be.true;
+  })
+
+  it('Should allow sign a transaction with a normal keypair', async () => {
+    const transactionBuilder = testUtils.getTransactionBuilderInstance();
+    const keypair = await StellarThreshSig.Keypair.random();
     const tx = transactionBuilder.build();
 
     await tx.sign(keypair);

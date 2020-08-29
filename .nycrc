@@ -2,15 +2,13 @@
   "reporter": [
     "text"
   ],
-  "include": [
-    "lib/**/*.js"
-  ],
   "exclude": [
-    "examples/**/*.js"
+    "examples/**",
+    "test/**"
   ],
   "require": [
     "esm"
   ],
-  "check-coverage": false,
-  "cache": false
+  "check-coverage": true,
+  "cache": true
 }
