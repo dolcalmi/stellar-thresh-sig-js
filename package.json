@@ -10,7 +10,7 @@
     "clean": "rm -rf ./.nyc_output ./node_modules/.cache ./coverage ./db",
     "report": "nyc -r text -r lcov report",
     "coveralls": "cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "mocha": "mocha --bail --recursive --require ./test/mocha.js --exit",
+    "mocha": "mocha --timeout 10000 --bail --recursive --require ./test/mocha.js --exit",
     "pretest": "npm run clean",
     "test": "npm run lint && nyc npm run mocha",
     "preversion": "npm run test",

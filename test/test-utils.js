@@ -10,7 +10,7 @@ var utils = module.exports = {
     function sleep(ms) {
       return new Promise(resolve => setTimeout(resolve, ms));
     }
-    await sleep(1500); // wait for server to launch
+    await sleep(5000); // wait for server to launch
     return server;
   },
 
