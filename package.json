@@ -1,6 +1,6 @@
 {
   "name": "stellar-thresh-sig",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Stellar Javascript two party threshold signature SDK",
   "main": "./lib/index.js",
   "scripts": {
