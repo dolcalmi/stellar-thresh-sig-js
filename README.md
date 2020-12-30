@@ -70,7 +70,7 @@ with specific port and log mode:
 $ ROCKET_PORT=8001 ROCKET_LOG=normal node ./examples/thresh-sig-server.js
 ```
 
-If you want to more information about ENV variables go to [Rocket ENV variables](https://rocket.rs/v0.4/guide/configuration/#environment-variables)
+If you want to know more information about ENV variables go to [Rocket ENV variables](https://rocket.rs/v0.4/guide/configuration/#environment-variables)
 
 ### Keypair
 
